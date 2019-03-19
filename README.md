@@ -31,9 +31,10 @@ We are using **[git flow](https://nvie.com/img/git-model@2x.png)**, we advise yo
 So as branches we have:
 - **master**: Last stable release (what is in production)
 - **develop**: Theorically stable branch, with new features (waiting to be fully tested / released)
-- **feature/++**: Features branches
-- **hotfix/++**: Hotfix branches
-- **release/++**: Release branches
+- **feature/++**: Features branches (merge to develop)
+- **bugfix/++**: Bugfix branches (merge to develop)
+- **hotfix/++**: Hotfix branches (merge to master & develop)
+- **release/++**: Release branches (merge to master & develop)
 
 On top of git flow:
 - We're adding the issue ID linked to the feature (or the hotfix if existing), before the name of the feature (or the hotfix).
