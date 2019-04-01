@@ -124,6 +124,14 @@ Intents of the **footer**:
 - For bug report, follow the template (TBD)
 - For feature request, follow the tmeplate (TBD)
 
+## Dev environment
+
+### AWS
+
+#### SES
+
+While in a dev environement, emails should be sent from the address `noreply@misakey.io` and to a `@misakey.com` address.
+
 ## Todo
 
 - Clean code / clean architecture
