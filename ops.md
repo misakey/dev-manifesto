@@ -1,6 +1,6 @@
 # Ops philosophy & goal
 
-Today our infrastructure is mainly hosted by AWS. 
+Today our infrastructure is mainly hosted by AWS.
 We really don't want to use their services in the long run. We are only using them today because it's free (startup credits) and working with no effort (good service).
 As a projection (that can be useful in the understanding of daily choices), we want to have our own datacenter(s) in a few years.
 
