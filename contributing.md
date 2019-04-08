@@ -17,8 +17,10 @@ So as branches we have:
 - **release/++**: The next release preparation (to merge to master & develop)
 
 On top of git flow:
-- We add the issue ID linked to the feature (or the hotfix if existing), before the name of the feature (or the hotfix).
-- Branches are named lowercase, with dash between words
+- Branches are named lowercase, with dash between words.
+- Branches names contains issue ID linked to the branch.
+
+Basically, a branch name should look like this: `[type]/[issue-id]-[description]`
 
 #### Examples
 
@@ -32,7 +34,7 @@ Finishing a feature `git flow feature finish 14-reset-password`
 
 Starting a feature: `git checkout -b feature/14-reset-password`
 
-Finishing a feature: 
+Finishing a feature:
 ```
 git checkout develop
 git merge feature/14-reset-password
@@ -56,7 +58,7 @@ git branch -d develop
 
 Possible **types** (project independant): mandatory
 - **build**: Building system (example : gulp, webpack, npm)
-- **ci**: Continuous Integration 
+- **ci**: Continuous Integration
 - **docs**: Documentation
 - **feat**: Adding a new feature
 - **fix**: Bug fix
@@ -91,7 +93,7 @@ Intents of the **footer**: optional
 
 #### Merge request validation
 
-- n reviewer
+- `n` reviewer
 - Test pass
 - Lint pass
 - Checklist
@@ -118,3 +120,20 @@ In order to make it work, we need to follow some conventions in the labelling of
 - For bug report, follow the template (TBD)
 - For feature request, follow the template (TBD)
 - Features issues should begin with As a user, I [...]
+
+## Everywhere
+
+### Reviews & code comments
+
+- Sometimes, reviews can make you feel bad, but efficiency during review is an important thing.
+
+    "Feel free to write concise comments, get straight to the point."
+
+    Our philosophy is to **never take personnally a feedback during a code review** even if you consider formulation is harsh or not well communicated.
+    Always consider we are all here to learn from the others and to improve together.
+
+    If you don't understand a comment and find a feedback review non constructive, feel feel to ask for more details about it. If you can, do it even in face to face more better communication =) Keep in mind written communication is not the best to solve problems.
+
+    Of course, humility and pedagogy are essential to be a good reviewer, this paragraph is mostly because of potential repetitive mistakes.
+
+- We aim to not use gendered pronoun (prefer `their` for someone or `its` for something).

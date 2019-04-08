@@ -2,29 +2,33 @@
 
 ## Backend
 
-### HTTP 
+### HTTP
 
-All HTTP responses should set a valid HTTP code that fits the reality of the response. 
+All HTTP responses should set a valid HTTP code that fits the reality of the response.
 If you have a doubt on which code to use, feel free to ask!
 
 ### Error conventions
 
-Backend errors follow these two conventions: 
+Backend errors follow these two conventions:
 
 Return the HTTP error code that fits
 Return a JSON object of this shape:
 ```
 {
   "error_code": "an_error_code_that_wont_evolve_for_the_frontend",
-  "error_description": "A human readable description of the error, useful for debugging." 
+  "error_description": "A human readable description of the error, useful for debugging."
 }
 ```
 
 ### API Format
 
-For each API that don't need to follow a specific standard (like OAuth for the authentication), we aim to implement the [JSON:API](https://jsonapi.org/) specs.
+For each API that don't need to follow a specific standard (like OAuth for the authentication), we aim to implement resource-oriented apis.
 
-### Emailing 
+We target to be RESTful but we could make some exceptions according to our needs. Exceptions must be discussed and agreed between maintainers to ensure APIs can evolve decently, and so architecture and product.
+
+You can read about resource-oriented good pratices in the [Google API Design Guide](https://cloud.google.com/apis/design/).
+
+### Emailing
 
 All email we send should follow email's RFC.
 Particulary we should implement an HTML and a plain text version of the content
