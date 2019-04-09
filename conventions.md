@@ -1,5 +1,14 @@
 # Conventions
 
+## Overall
+
+### Ports numbering
+
+We want to avoid conflicts between the ports used by our apps.
+- Backend apps should listen on ports 5xxx
+- Frontend apps should listen on ports 3xxx
+- Listening port should be unique across all projects 
+
 ## Backend
 
 ### HTTP
