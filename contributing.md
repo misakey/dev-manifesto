@@ -87,16 +87,25 @@ Intents of the **footer**: optional
 
 ### Merge request
 
-- Merge requests should be done on Gitlab
-- Merges should squash commits
-- Merge requests should aggregate all linked issues solved and breaking changes introduced by the commits.
+MR = Merge request.
 
-#### Merge request validation
+Rules:
+- **On Gitlab**.
+- **Commits are squashed**.
+- Mention all **linked issues to close**.
+- Mention all **introduced breaking changes**.
+- Merged after **all discussions** has been **solved**.
 
-- `n` reviewer
-- Test pass
-- Lint pass
-- Checklist
+#### Merge request flow
+
+1. Open a MR.
+2. Approve the MR and assign people to review it when you think it is ready to be reviewed.
+3. Resolve all discussions.
+4. After everyone has approved, be sure you follow merge commit message convention and then you can merge !
+
+#### Merge commit message
+
+Ensure you have all commits inside squash commit message, Gitlab seems to not udpate it with commits added after MR opening.
 
 ## Project managment
 
