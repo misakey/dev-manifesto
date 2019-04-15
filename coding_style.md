@@ -48,7 +48,9 @@ Misc ideas:
 
 Lot of our best practices are presented in these [slides](https://talks.golang.org/2013/bestpractices.slide).
 We follow Golang best practices, so you will find most information about our coding styles [here](getting_skilled.md#golang).
-[Effective Go](https://golang.org/doc/effective_go.html) is our bible.
+
+- [Effective Go](https://golang.org/doc/effective_go.html) is our bible.
+- You can find [here](https://github.com/golang/go/wiki/CodeReviewComments) some help about how to review Go code.
 
 #### Code Architecture / Design
 
