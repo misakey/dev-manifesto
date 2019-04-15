@@ -40,6 +40,7 @@ Here follows a list of nice link to visit to learn about Golang. Sorted by categ
 ##### General
 - [Official Golang FAQ](https://golang.org/doc/faq).
 - [Offical Go Talks](https://talks.golang.org).
+- [Go Proverbs](https://go-proverbs.github.io/).
 - Know your strongness, but also your weakness with this **Go: the Good, the Bad and the Ugly** [article](https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/).
 
 ##### Concurrency
