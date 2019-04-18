@@ -6,12 +6,12 @@ We use Gitlab as a central tool to manage all contributions and collaborative wo
 
 ### Branches
 
-We are using **[git flow](https://nvie.com/img/git-model@2x.png)**, we advise you to use the [git flow CLI](https://danielkummer.github.io/git-flow-cheatsheet/)
+We are using **[git flow](https://nvie.com/img/git-model@2x.png)**
 
 So as branches we have:
 - **master**: The last stable release (what is in production)
 - **develop**: The newest features (waiting to be fully tested / released)
-- **feature/++**: A work in progress on a feature (to merge to develop)
+- **feat/++**: A work in progress on a feature (to merge to develop)
 - **bugfix/++**: A work in progress to fix a bug (to merge to develop)
 - **hotfix/++**: A work in progress to hotfix something in prod (to merge to master & develop)
 - **release/++**: The next release preparation (to merge to master & develop)
@@ -22,24 +22,7 @@ On top of git flow:
 
 Basically, a branch name should look like this: `[type]/[issue-id]-[description]`
 
-#### Examples
-
-##### Using the gitflow CLI
-
-Starting a feature: `git flow feature start 14-reset-password`
-
-Finishing a feature `git flow feature finish 14-reset-password`
-
-##### Using raw GIT
-
-Starting a feature: `git checkout -b feature/14-reset-password`
-
-Finishing a feature:
-```
-git checkout develop
-git merge feature/14-reset-password
-git branch -d develop
-```
+**Branches must be created from the GitLab issue view with the Merge Request**
 
 ### Commits
 
@@ -89,17 +72,19 @@ Intents of the **footer**: optional
 
 MR = Merge request.
 
+You can create the MR when you start to work on an issue using the Create Merge Request and Branch feature from Issue view. The MR will be automatically set to a `WIP` (Work In Progress) state.
+
 Rules:
-- **On Gitlab**.
+- **On Gitlab from the issue view**.
 - **Commits are squashed**.
-- Mention all **linked issues to close**.
+- Mention all **linked issues to close**. (auto)
 - Mention all **introduced breaking changes**.
 - Merged after **all discussions** has been **solved**.
 
 #### Merge request flow
 
 1. Open a MR.
-2. Approve the MR and assign people to review it when you think it is ready to be reviewed.
+2. Remove 'WIP:' in MR title, approve the MR and assign people to review it when you think it is ready to be reviewed.
 3. Resolve all discussions.
 4. After everyone has approved, be sure you follow merge commit message convention and then you can merge !
 
