@@ -10,6 +10,6 @@ It defines:
 - [project_architecture](project_architecture.md): We <3 clean architecture
 - [ops](ops.md): Devops philosophy and tools
 - [conventions](conventions.md): Misc conventions (API, HTTP, errors, ...)
-- [access_right](access_right.md): Tools access right philosophy
+- [access_right](access_rights.md): Tools access right philosophy
 - [aws](aws.md): Some AWS (Amazon Web Services) specific informations
-- [ressources](ressources): A folder with some ressources, like default files
+- ressources: A folder with some ressources, like default files
