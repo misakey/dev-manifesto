@@ -12,7 +12,7 @@ So as branches we have:
 - **master**: The last stable release (what is in production)
 - **develop**: The newest features (waiting to be fully tested / released)
 - **feat/++**: A work in progress on a feature (to merge to develop)
-- **bugfix/++**: A work in progress to fix a bug (to merge to develop)
+- **fix/++**: A work in progress to fix a bug (to merge to develop)
 - **hotfix/++**: A work in progress to hotfix something in prod (to merge to master & develop)
 - **release/++**: The next release preparation (to merge to master & develop)
 
@@ -22,7 +22,14 @@ On top of git flow:
 
 Basically, a branch name should look like this: `[type]/[issue-id]-[description]`
 
-**Branches must be created from the GitLab issue view with the Merge Request**
+Here's the regex that validate the branch name
+```
+^((feat|fix|hotfix|release)\/([a-z0-9-]+)|develop|master)
+```
+
+**Process** Create the branch locally from the up-to-date version of develop. You can copy/past the
+branch id / name from gitlab issues's `create merge request` button (but don't use the button to
+create merge request)
 
 ### Commits
 
@@ -34,9 +41,7 @@ Basically, a branch name should look like this: `[type]/[issue-id]-[description]
 ```
 <type>(<scopes>): <subject>
 
-<description>
-
-<footer>
+<optional description>
 ```
 
 Possible **types** (project independant): mandatory
@@ -46,7 +51,7 @@ Possible **types** (project independant): mandatory
 - **feat**: Adding a new feature
 - **fix**: Bug fix
 - **perf**: Performances improvment
-- **refactor**: Code refacto
+- **refacto**: Code refacto
 - **style**: Changes in code style (linting, ...)
 - **test**: Tests modifications
 
@@ -62,39 +67,42 @@ Formatting rules for **subject**: mandatory
 - Lowercased
 - No punctuation
 
-Formatting rules for **description**: optional
+**optional description** is a free part in commit messages. 
 
-Intents of the **footer**: optional
-- Linked to issues (to close it automatically)
-- Breaking Changes notices (if unavoidable breaking changes)
+One usage of it is to add commit names in squash commits.
+
+
+Here's the regex that validate the commits
+```
+^(build|ci|docs|feat|fix|perf|refacto|style|test|wip)( \([a-z]+\))?: .+
+```
 
 ### Merge request
 
 MR = Merge request.
 
 Rules:
-- **Created from Gitlab from the issue view**.
-- **Commits are squashed** (automatic).
-- Mention all **linked issues to close** (automatic).
-- Mention all **introduced breaking changes**.
-- Merged after **all discussions** has been **solved** (automatic).
+- **Manually create the MR** (from the link when push for example)
+- **Name the MR with the squash commit you want** (should follow the commits formatting)
+- **Commits are squashed** (automatic)
+- ~~Mention all **linked issues to close**~~ (not working on Gitlab)
+- Mention all **introduced breaking changes**
+- Merged after **all discussions** has been **solved** (automatic)
 
-#### Open a Merge Request
-
-You can create the MR when you start to work on an issue using the Create Merge Request and Branch feature from Issue view. The MR will be automatically set to a `WIP` (Work In Progress) state.
 
 #### Ask a Merge Request to be reviewed
 
-1. Remove 'WIP:' in MR title, approve the MR and assign people to review it when you think it is ready to be reviewed.
-2. Assign people to the PR (create permanent indicator on gitlab).
-3. Mention same people in a comment (create todo and temporary indicator on gitlab).
-4. Don't hesitate to text people privately or on public chan if the review is too long to you or require a quick one.
+1. Review yourself the merge request (don't waste other's time)
+1. Rebase on the latest version of your target branch
+1. Assign people to the MR (create permanent indicator on gitlab).
+1. Mention same people in a comment (create todo and temporary indicator on gitlab).
+1. Don't hesitate to text people privately or on a public channel if the review is too long to you or require a quick one.
 
 #### Review the Merge Request
 
 - You can give feedback about the MR opening discussions on a specific line code or global to the MR.
 - All discussions must be resolved in order to merge the branch.
-- Discussions should never be resolved by the MR author, unless it is specified by the comment author.
+- Discussions should never be resolved by the MR author, unless it is specified by the comment author (possibly using ⚡ (zap emoji))
 - Once you have reviewed the MR, you should mention back the MR author in a comment to notify him the MR has been reviewed.
 
 When you review a Merge Request:
@@ -106,7 +114,7 @@ When all discussions has been resolved and you got enough approvals to merge, be
 
 #### Merge the branch
 
-Squash commits.
+Squash commits. Take time to check the commit name: it should follow the commit name convention.
 
 Ensure you have all commits inside squash commit message, Gitlab seems to not udpate it with commits added after MR opening.
 
