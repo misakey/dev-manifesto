@@ -48,6 +48,8 @@ Our suite of services should adopt common ways to interact with them such as imp
 
 One goal of this collection is to be able to abstract these interactions using _Interfaces_ such as Loggers, in order to be able to change our _Infrastucture Services_ without changing our services logics.
 
+See [Infrastructure Conventions](conventions.md#infrastructure) section.
+
 # Pitfalls and Antipatterns
 
 ### Code Reuse Abuse
