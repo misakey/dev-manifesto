@@ -20,6 +20,10 @@
 ## Screenshots|Schemas|Code samples
 > Paste json schemas/examples when related to API or Data model
 
+---
+## How to test
+> Description should explain how to tests the MR.
+> An ordered list of steps is a good way to describe a test.
 
 ---
 ## :boom: :rotating_light: Breaking changes
