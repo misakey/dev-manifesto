@@ -45,6 +45,7 @@
 
 ---
 ## Removing wip status
+```
 * [ ] I created a comment containing this section
 * [ ] I filled the description template, then removed blockquotes
 * [ ] I read each change file by file, line by line :imp:
@@ -60,9 +61,11 @@
 * [ ] I updated api docs (if applicable)
 * [ ] Link to spec issues is OK (reachable through closed issues link or copied if needed)
 * [ ] I documented breaking changes :boom: :rotating_light: (if applicable)
+```
 
 ---
 ## Review checklist
+```
 * Prerequisites
   * [ ] No rebase needed at the time of my review
   * [ ] Pipeline is successful at the time of my review
@@ -79,3 +82,4 @@
     * [ ] Code behaviour is self-explanatory or has comments to explain
   * [ ] No refactor needed
 * [ ] `// @FIXME` code reviewed and changes are planned (if applicable)
+```
