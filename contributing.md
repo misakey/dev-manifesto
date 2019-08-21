@@ -67,7 +67,7 @@ Formatting rules for **subject**: mandatory
 - Lowercased
 - No punctuation
 
-**optional description** is a free part in commit messages. 
+**optional description** is a free part in commit messages.
 
 One usage of it is to add commit names in squash commits.
 
@@ -92,8 +92,8 @@ Rules:
 
 #### Ask a Merge Request to be reviewed
 
-1. Review yourself the merge request (don't waste other's time)
-1. Rebase on the latest version of your target branch
+1. Review yourself the merge request (don't waste other's time).
+1. Rebase on the latest version of your target branch ([here are some hints about how to rebase your branch](#rebase-your-branches)).
 1. Assign people to the MR (create permanent indicator on gitlab).
 1. Mention same people in a comment (create todo and temporary indicator on gitlab).
 1. Don't hesitate to text people privately or on a public channel if the review is too long to you or require a quick one.
@@ -157,3 +157,18 @@ In order to make it work, we need to follow some conventions in the labelling of
     Of course, humility and pedagogy are essential to be a good reviewer, this paragraph is mostly because of potential repetitive mistakes that lead to deshumanized review comments.
 
 - We aim to not use gendered pronoun (prefer `their` for someone or `its` for something, or specify both `her/him`).
+
+
+## Frequently asked questions
+
+
+### Rebase your branches
+
+Following our flow, you will have at some point to rebase your branch against `develop`, `master` and any other branches your want to merge in your current a branch.
+
+First, be aware of branches created in cascade is a problematic for rebase strategy, so we should try to limitate it as much as possible.
+For refactoring or common componentes bootstrapping, we have no much choices but to make reviews a priority within the team, or to face potential challenges while rebasing children branches.
+Do not hesitate to make parallelizable tasks to avoid this situation as you can.
+
+Rebase can be done in many ways, what is important to know is the states of your respective branches.
+Do not hesitate to rebase your branches against `develop` after a big MR has been merged (that you should be aware of since your might certainly be a reviewer if a contributor).
