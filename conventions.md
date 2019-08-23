@@ -124,37 +124,37 @@ It represents global codes and corresponds to http status as described [here](ht
 We use this link as general specifications for errors and not just for http request errors.
 
 **Classic codes:** _codes corresponding to http status codes_
--> `bad_request`: 400, general bad request.
--> `unauthorized`: 401, a required valid token is missing/malformed/expired.
--> `forbidden`: 403, accesses checks failed.
--> `not_found`: 404, the resource/route has been not found.
--> `method_not_allowed`: 405, the method is not supported at a resource.
--> `conflict`: 409, the action cannot be perform of the resource.
--> `unprocessable_entity`: 422, the received entity is unprocessable.
--> `internal`: 500, something internal to the service has failed.
--> `...`
+* `bad_request`: 400, general bad request.
+* `unauthorized`: 401, a required valid token is missing/malformed/expired.
+* `forbidden`: 403, accesses checks failed.
+* `not_found`: 404, the resource/route has been not found.
+* `method_not_allowed`: 405, the method is not supported at a resource.
+* `conflict`: 409, the action cannot be perform of the resource.
+* `unprocessable_entity`: 422, the received entity is unprocessable.
+* `internal`: 500, something internal to the service has failed.
+* `...`
 
 **Redirect codes**: _code encountered in query parameter `error_code` on redirections_
--> `invalid_flow`
--> `invalid_url`
--> `missing_parameter`
--> `...`
+* `invalid_flow`
+* `invalid_url`
+* `missing_parameter`
+* `...`
 
 **Special codes:** _special codes that should not be encountered externally_
 /!\ Thanks to contact the backend team if you receive one these codes.
--> `unknown_code`: 500, something internal to the service has failed.
--> `no_code`: xxx, no specific code defined.
+* `unknown_code`: 500, something internal to the service has failed.
+* `no_code`: xxx, no specific code defined.
 
 ### Origin
 Origin is an information about where the error does come from.
 
 **Possible origins:**
--> `body`: comes from body parameter.
--> `query`: comes from query parameters.
--> `path`: comes from path parameters.
--> `headers`: comes from headers.
--> `internal`: comes from internal logic.
--> `...`
+* `body`: comes from body parameter.
+* `query`: comes from query parameters.
+* `path`: comes from path parameters.
+* `headers`: comes from headers.
+* `internal`: comes from internal logic.
+* `...`
 
 **Special origins:** _special origins that should not be encountered externally_
 /!\ Thanks to contact the backend team if you receive one these origins.
@@ -172,23 +172,23 @@ Each detail object is built with a DetailKey and a DetailValue:
 
 **Possible detail values:**
 
--> `conflict`: unique...
--> `malformed`: email format,  ip address format...
--> `invalid`: minumum/maximum value/lenght...
--> `required`: missing in request...
--> `expired`: expired duration...
--> `forbidden`: forbidden to update...
--> `internal`: internal error occured
--> `locked`: cannot be updated
--> `not_found`: correspondance has not been found
--> `not_supported`: not handled by the running implementation
--> `timed_out`: something... timed out
--> `unauthorized`: authorization is missing
+* `conflict`: unique...
+* `malformed`: email format,  ip address format...
+* `invalid`: minumum/maximum value/lenght...
+* `required`: missing in request...
+* `expired`: expired duration...
+* `forbidden`: forbidden to update...
+* `internal`: internal error occured
+* `locked`: cannot be updated
+* `not_found`: correspondance has not been found
+* `not_supported`: not handled by the running implementation
+* `timed_out`: something... timed out
+* `unauthorized`: authorization is missing
 
 **Special detail values:**
 /!\ Thanks to contact the backend team if you receive one these detail values.
--> `unknown`: unknown detail code
--> `no_code`: no specific code
+* `unknown`: unknown detail code
+* `no_code`: no specific code
 
 ## API Format
 
