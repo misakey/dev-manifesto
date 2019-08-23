@@ -1,6 +1,9 @@
 # Conventions
 
-## Overall
+Our global conventions.
+
+____
+# Overall
 
 ### Ports numbering
 
@@ -9,7 +12,8 @@ We want to avoid conflicts between the ports used by our apps.
 - Frontend apps should listen on ports 3xxx
 - Listening port should be unique across all projects
 
-## Infrastructure
+____
+# Infrastructure
 
 ### Logging
 
@@ -82,27 +86,111 @@ Each new fields should be added in this documentation.
 
 **Mandatory fields:**: `severity`, `file`, `no_line`.
 
-## Backend
+____
+# Backend
 
-### HTTP
+## HTTP
 
 All HTTP responses should set a valid HTTP code that fits the reality of the response.
 If you have a doubt on which code to use, feel free to ask!
 
-### Error conventions
+## Error conventions
 
 Backend errors follow these two conventions:
 
-Return the HTTP error code that fits
+Return the HTTP error code that fits.
+
 Return a JSON object of this shape:
-```
+```json
 {
-  "error_code": "an_error_code_that_wont_evolve_for_the_frontend",
-  "error_description": "A human readable description of the error, useful for debugging."
+     "code": "{Code}",
+     "desc": "free format description",
+     "origin": "{Origin}",
+     "details": {
+       "{DetailKey}": "{DetailValue}",
+       "{DetailKey}": "{DetailValue}",
+     },
 }
 ```
 
-### API Format
+All "{things}" are described in following sections...
+
+### Code
+
+Code describes an error code as a string used internally and by clearer consumer for better error identifications & reactions.
+
+It represents global codes and corresponds to http status as described [here](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+
+We use this link as general specifications for errors and not just for http request errors.
+
+**Classic codes:** _codes corresponding to http status codes_
+-> `bad_request`: 400, general bad request.
+-> `unauthorized`: 401, a required valid token is missing/malformed/expired.
+-> `forbidden`: 403, accesses checks failed.
+-> `not_found`: 404, the resource/route has been not found.
+-> `method_not_allowed`: 405, the method is not supported at a resource.
+-> `conflict`: 409, the action cannot be perform of the resource.
+-> `unprocessable_entity`: 422, the received entity is unprocessable.
+-> `internal`: 500, something internal to the service has failed.
+-> `...`
+
+**Redirect codes**: _code encountered in query parameter `error_code` on redirections_
+-> `invalid_flow`
+-> `invalid_url`
+-> `missing_parameter`
+-> `...`
+
+**Special codes:** _special codes that should not be encountered externally_
+/!\ Thanks to contact the backend team if you receive one these codes.
+-> `unknown_code`: 500, something internal to the service has failed.
+-> `no_code`: xxx, no specific code defined.
+
+### Origin
+Origin is an information about where the error does come from.
+
+**Possible origins:**
+-> `body`: comes from body parameter.
+-> `query`: comes from query parameters.
+-> `path`: comes from path parameters.
+-> `headers`: comes from headers.
+-> `internal`: comes from internal logic.
+-> `...`
+
+**Special origins:** _special origins that should not be encountered externally_
+/!\ Thanks to contact the backend team if you receive one these origins.
+-> `not_defined`: the error has no origin defined yet
+
+### Details
+
+An object containing a dynamical number of detail objects.
+
+Each detail object is built with a DetailKey and a DetailValue:
+
+-> A DetailKey is an dynamical string representing fields name, query parameters name, resource identifiers...
+
+-> A DetailValue describes an error code as a string for clearer consumer error identification & reactions. It represents codes related to a detail key.
+
+**Possible detail values:**
+
+-> `conflict`: unique...
+-> `malformed`: email format,  ip address format...
+-> `invalid`: minumum/maximum value/lenght...
+-> `required`: missing in request...
+-> `expired`: expired duration...
+-> `forbidden`: forbidden to update...
+-> `internal`: internal error occured
+-> `locked`: cannot be updated
+-> `not_found`: correspondance has not been found
+-> `not_supported`: not handled by the running implementation
+-> `timed_out`: something... timed out
+-> `unauthorized`: authorization is missing
+
+**Special detail values:**
+/!\ Thanks to contact the backend team if you receive one these detail values.
+-> `unknown`: unknown detail code
+-> `no_code`: no specific code
+
+## API Format
 
 For each API that don't need to follow a specific standard (like OAuth for the authentication), we aim to implement resource-oriented apis.
 
@@ -110,16 +198,17 @@ We target to be RESTful but we could make some exceptions according to our needs
 
 You can read about resource-oriented good pratices in the [Google API Design Guide](https://cloud.google.com/apis/design/).
 
-### Emailing
+## Emailing
 
 All email we send should follow email's RFC.
 Particulary we should implement an HTML and a plain text version of the content
 
 ## Internationalization (I18N)
 
-Most of the I18N should be done in frontend. So the backend will send to frontend translation tokens.
-For the few cases that are not working in frontend (like sending emails), the I18N should be possible too (and as much as possible the language should be defined by the frontend)
+Most of the I18N should be done in frontend. So the backend will send to frontend translation labels.
+For the few cases that are not working in frontend (like sending emails), the I18N should be possible too (and as much as possible the language should be defined by the frontend).
 
-### Frontend
+____
+# Frontend
 
-We use I18Next as a frontend I18N framework.
+We use I18Next as a frontend I18N framework. \o/
