@@ -158,7 +158,7 @@ Origin is an information about where the error does come from.
 
 **Special origins:** _special origins that should not be encountered externally_
 /!\ Thanks to contact the backend team if you receive one these origins.
--> `not_defined`: the error has no origin defined yet
+* `not_defined`: the error has no origin defined yet
 
 ### Details
 

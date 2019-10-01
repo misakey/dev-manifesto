@@ -69,16 +69,9 @@
 
 ---
 ## Priority
-> Keep proper priority or add label
-> * **non-blocking**: the bug impacts small amount of users, it is not perceptible, the fix can be postponed.
-> * **impacting**: the bug impacts a certain amount of users and brings business value if fixed, should be investigated as fast as possible.
-> * **breaking**: the bug impacts a large amount of users and breaks things, should be number one priority for someone qualified.
-> * **devastating**: the bug is putting our business at risk, create a crisis cell with your best people and solve it now !
-
-non-blocking | impacting | breaking | devastating
-
+> Priority is defined by star bar Gitlab label.
 
 ---
 ## :exclamation: Tips
-/label ~Bug 
+/label ~Bug
 > Do not forget to add labels in addition of automatic ones
