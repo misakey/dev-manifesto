@@ -1,6 +1,6 @@
 # Getting skilled
 
-This will be a knowledge center filled with ressources to gain technical knowlege on our stack.
+This will be a knowledge center filled with resources to gain technical knowlege on our stack.
 
 _________
 

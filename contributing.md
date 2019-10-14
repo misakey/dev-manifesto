@@ -6,17 +6,15 @@ We use Gitlab as a central tool to manage all contributions and collaborative wo
 
 ### Branches
 
-We are using **[git flow](https://nvie.com/img/git-model@2x.png)**
+We are using the **[Trunk Based Flow](https://trunkbaseddevelopment.com)**. Its documentation is complete and easy to assimilate.
+We are doing trunk freeze during release/QA process since we can't ensure new commits does not break master.
 
 So as branches we have:
-- **master**: The last stable release (what is in production)
-- **develop**: The newest features (waiting to be fully tested / released)
-- **feat/++**: A work in progress on a feature (to merge to develop)
-- **fix/++**: A work in progress to fix a bug (to merge to develop)
-- **hotfix/++**: A work in progress to hotfix something in prod (to merge to master & develop)
-- **release/++**: The next release preparation (to merge to master & develop)
+- **master**: The trunk, a stable branch.
+- **feat/++**: A work in progress on a feature (based on master, to merge to master).
+- **fix/++**: A work in progress to fix a bug (based on master, to merge to master).
+- **hotfix/++**: A work in progress to hotfix something in prod (based on production tag, to tag then to merge to or cherry-pick on master).
 
-On top of git flow:
 - Branches are named lowercase, with dash between words.
 - Branches names contains issue ID linked to the branch.
 
@@ -24,17 +22,14 @@ Basically, a branch name should look like this: `[type]/[issue-id]-[description]
 
 Here's the regex that validate the branch name
 ```
-^((feat|fix|hotfix|release)\/([a-z0-9-]+)|develop|master)
+^((feat|fix|hotfix)\/([a-z0-9-]+)|master)
 ```
 
-**Process** Create the branch locally from the up-to-date version of develop. You can copy/past the
-branch id / name from gitlab issues's `create merge request` button (but don't use the button to
-create merge request)
+**Process** Create the branch using the button `create merge request` from gitlab's issues.
 
 ### Commits
 
-- Signed commits (required)
-- 1 commit per logical change (atomical commits)
+- Signed commits (required).
 
 #### Format
 
@@ -82,33 +77,32 @@ Here's the regex that validate the commits
 MR = Merge request.
 
 Rules:
-- **Manually create the MR** (from the link when push for example)
-- **Name the MR with the squash commit you want** (should follow the commits formatting)
-- **Commits are squashed** (automatic)
-- ~~Mention all **linked issues to close**~~ (not working on Gitlab)
-- Mention all **introduced breaking changes**
-- Merged after **all discussions** has been **solved** (automatic)
-
+- **Create the MR from Gitlab Issues while creating the branch**.
+- **Name the MR with the squash commit you want** (should follow the commits formatting).
+- **Commits are squashed** in order to show iterative integration of features (still you may merge many commits).
+- Mention all **introduced breaking changes**.
+- Merged after **all discussions** has been **solved** (automatic).
+- At least two reviewers & one tester (can be a reviewer).
 
 #### Ask a Merge Request to be reviewed
 
+1. Rebase on the latest version of master branch ([here are some hints about how to rebase your branch](#rebase-your-branches)).
 1. Review yourself the merge request (don't waste other's time).
-1. Rebase on the latest version of your target branch ([here are some hints about how to rebase your branch](#rebase-your-branches)).
-1. Assign people to the MR (create permanent indicator on gitlab).
-1. Mention same people in a comment (create todo and temporary indicator on gitlab).
+1. Assign people to the MR (create permanent indicator on gitlab & add a "to do" notification).
 1. Don't hesitate to text people privately or on a public channel if the review is too long to you or require a quick one.
 
 #### Review the Merge Request
 
 - You can give feedback about the MR opening discussions on a specific line code or global to the MR.
 - All discussions must be resolved in order to merge the branch.
-- Discussions should never be resolved by the MR author, unless it is specified by the comment author (possibly using ⚡ (zap emoji))
-- Once you have reviewed the MR, you should mention back the MR author in a comment to notify him the MR has been reviewed.
+- Discussions should never be resolved by the MR author, unless it is specified by the comment author (possibly using ⚡ (zap emoji)).
+- Once you have reviewed the MR, you should assign back the MR author in a comment to notify them the MR has been reviewed.
+- If the MR has two approvals (including your future one) and it is not tested, you should test it.
 
 When you review a Merge Request:
 1. Review the code and ensure our best practices are followed.
 2. Verify the code implements functional requirements.
-3. At least one person should test locally the branch. Mention you have tested the branch when you mention the MR creator about your review.
+3. Mention if you have or not tested the branch.
 
 When all discussions has been resolved and you got enough approvals to merge, be sure you follow [merge the branch convention](merge-the-branch) and then you can merge !
 
@@ -119,29 +113,6 @@ Squash commits. Take time to check the commit name: it should follow the commit 
 Ensure you have all commits inside squash commit message, Gitlab seems to not udpate it with commits added after MR opening.
 
 Delete the source branch.
-
-## Project managment
-
-We use the Gitlab issues to manage the projects.
-We use the board view to have a kanban view.
-
-
-### Boards / Kanban
-
-Here's the [list of labels](https://gitlab.com/Misakey/contributing/labels) we are using as step in the issue workflow.
-
-We use the global Misakey wide board to have an overview of the progress of the work/sprints.
-In order to make it work, we need to follow some conventions in the labelling of the issues:
-- all backend issues are labelled with the `Backend` label
-- for each project we use the `project-name` label corresponding to the issue. This helps us to easily switch between project in this overview
-
-### Issue naming
-
-- Explicit title
-- Tagging (feat, bug, ...)
-- For bug report, follow the template (TBD)
-- For feature request, follow the template (TBD)
-- Features issues should begin with As a user, I [...]
 
 ## Team Spirit
 
@@ -164,11 +135,33 @@ In order to make it work, we need to follow some conventions in the labelling of
 
 ### Rebase your branches
 
-Following our flow, you will have at some point to rebase your branch against `develop`, `master` and any other branches your want to merge in your current a branch.
-
-First, be aware of branches created in cascade is a problematic for rebase strategy, so we should try to limitate it as much as possible.
-For refactoring or common componentes bootstrapping, we have no much choices but to make reviews a priority within the team, or to face potential challenges while rebasing children branches.
-Do not hesitate to make parallelizable tasks to avoid this situation as you can.
+Following our flow, you will have at some point to rebase your branch on `master`.
 
 Rebase can be done in many ways, what is important to know is the states of your respective branches.
-Do not hesitate to rebase your branches against `develop` after a big MR has been merged (that you should be aware of since your might certainly be a reviewer if a contributor).
+- do not hesitate to rebase your branches against `master` after a big MR has been merged (on which you should be aware as a reviewer / project contributor).
+- branches created in cascade can be problematic for rebase strategy, so you should try to limitate it as much as possible or you'll have to cascade rebase all your branches.
+- when needed, `git push --force-with-lease` (safer than --force).
+- see `git rerere` when you have lot of redundant conflict to solve while rebasing many commits (or see next section).
+- some people might appreciate some existing merge tool to facilitate conflict resolutions (`beyond compare`, `kdiff3`...).
+- reminder that if someone has your work locally, rewriting history might create painful situations.
+
+#### Squash first using interactive rebase on your own branch
+
+The most common issue with rebase strategy is that conflicts are resolved one commit by one commit rebasing your branch.
+You can easily avoid that by first squashing your commits before rebasing your branch.
+
+You can do it by using `git rebase -i` on your own branch:
+
+1. Find the last commit from master on your branch (the most recent commit after you just created your branch).
+2. `git rebase -i {commit_hash}`.
+3. Choose to squash your commits.
+4. Rebase finally against `master`: you just have one conflict to solve.
+
+Considering your commit are squashed, you can do it whatever you want on your branch in term of source management, you can have merge commits if you need it from other branches, or if you need to work simultaneous on a branch with another contributor.
+
+#### Think about cherry-pick
+
+Sometimes, you can have a lot of commits that have been added to `master` branch while you were developing (or in case of a hotfix).
+
+Instead of rebasing this commit and resolving potential conflict with `X` new commits, you can, after being sure your commit is saved remotely, choose to `reset --hard` your branch on `master` then `git cherry-pick {commit_hash}`.
+This way, you will resolve all conflict in one row and it will save you time.

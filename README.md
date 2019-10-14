@@ -21,15 +21,15 @@ part ([project architecture](project_architecture.md) for backend projects, [fro
 
 ## What's in the manifest ?
 
-- [getting_skilled](getting_skilled.md): A document with ressources to learn / improve your skills
-on the techs we're using
-- [coding_style](coding_style.md): The coding style conventions we're following
-- [contributing](contributing.md): The projects managment tools (git, kanban, ...) and conventions
-- [project_architecture](project_architecture.md): We <3 clean architecture
-- [ops](ops.md): Devops philosophy and tools
-- [conventions](conventions.md): Misc conventions (API, HTTP, errors, ...)
-- [access_right](access_rights.md): Tools access right philosophy
-- [aws](aws.md): Some AWS (Amazon Web Services) specific informations
+- [getting_skilled](getting_skilled.md): A document with resources to learn / improve your skills
+on the techs we're using.
+- [coding_style](coding_style.md): The coding style conventions we're following.
+- [contributing](contributing.md): The projects managment tools (git, kanban, ...) and conventions.
+- [project_architecture](project_architecture.md): We <3 clean architecture.
+- [ops](ops.md): Devops philosophy and tools.
+- [conventions](conventions.md): Misc conventions (API, HTTP, errors, ...).
+- [access_right](access_rights.md): Tools access right philosophy.
+- [aws](aws.md): Some AWS (Amazon Web Services) specific informations.
 - [agile_methodology](agile_methodology.md): How do we organise the work flow using agile methodology.
-- [frontend](frontend.md): Guidelines and thought about front-end development
-- ressources: A folder with some ressources, like default files
+- [frontend](frontend.md): Guidelines and thought about front-end development.
+- resources: A folder with some resources, like default files.
