@@ -14,26 +14,6 @@ Agile is meant to leave technical decisions to the technical people.
 - simplicity
 
 _____
-# Sprint Review
-_The goal of a Sprint Review is to summarize what has been done or reported during the sprint. Here We talk here about functional progress and rarely technical according to the audience. It happens at the end of a sprint._
-
-Type of attendees: Misakey Product/Technical Team, Internal/External Stakeholders...
-
-Technical/Feature teams should express turn by turn:
-## Step 1: Objectives reminder
-We remind what was the initial objectives of the sprint.
-
-## Step 2: What has been accomplished (macro)
-What has been done during this sprint - we talk here about issues that have been closed.
-What has been done additionally to what has been initially defined.
-
-## Step 3: What had not been done (micro)
-What has been not done during the sprint, the why (time, deprioritized...), or how far the task is reported in the future.
-
-## Step 4: Demo
-Demo should be prepared in advance before the sprint planning. All what is shown in demo is available on production with next release.
-
-_____
 # Retrospective
 Sometimes, we do retrospectives:
 _The goal of a retrospective is to summarize good and bad things that occurred during the sprint. Here we discuss about individual and team feedback about internal process, project state..._
