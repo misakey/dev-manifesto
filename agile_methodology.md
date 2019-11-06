@@ -16,7 +16,8 @@ Agile is meant to leave technical decisions to the technical people.
 _____
 # Retrospective
 Sometimes, we do retrospectives:
-_The goal of a retrospective is to summarize good and bad things that occurred during the sprint. Here we discuss about individual and team feedback about internal process, project state..._
+
+_The goal of a retrospective is to summarize good and bad things that occurred since the last retrospective. Here we discuss about individual and team feedback about internal process, project state..._
 
 Type of attendees: Misakey Product/Technical Team.
 
