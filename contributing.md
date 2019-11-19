@@ -69,7 +69,8 @@ One usage of it is to add commit names in squash commits.
 
 Here's the regex that validate the commits
 ```
-^(build|ci|docs|feat|fix|perf|refacto|style|test|wip)( \([a-z]+\))?: .+
+^(build|ci|docs|feat|fix|perf|refacto|style|test|wip)(\([a-z-]+\))?: .+
+
 ```
 
 ### Merge request
