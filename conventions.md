@@ -138,6 +138,8 @@ We use this link as general specifications for errors and not just for http requ
 * `invalid_flow`
 * `invalid_url`
 * `missing_parameter`
+* `forbidden_role`
+* `auth_process_required`
 * `...`
 
 **Special codes:** _special codes that should not be encountered externally_
