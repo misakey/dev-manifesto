@@ -33,6 +33,7 @@ It is essential to understand how Golang have been designed and why is the purpo
 Here follows a list of nice link to visit to learn about Golang. Sorted by categories
 
 ##### Essential
+- **The Zen Of Go** [site](https://the-zen-of-go.netlify.com/)
 - **Simplicity is Complicated** [slides](https://talks.golang.org/2015/simplicity-is-complicated.slide) and [video](https://www.youtube.com/watch?v=rFejpH_tAHM) by Rob Pike, presenting thoughts about the Why of Golang.
 - **Twelve Best Pratices** [slides](https://talks.golang.org/2013/bestpractices.slide) & [video](https://www.youtube.com/watch?v=8D3Vmm1BGoY) by Francesc Campoy.
 - **Concurrent is not parallelism** [slides](https://talks.golang.org/2012/waza.slide) by Rob Pike (video linked inside).
