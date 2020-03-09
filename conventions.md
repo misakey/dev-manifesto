@@ -192,6 +192,28 @@ Each detail object is built with a DetailKey and a DetailValue:
 * `unknown`: unknown detail code
 * `no_code`: no specific code
 
+:warning: In rare cases, the detail is used to give more information about an expected, required value or an resource identifier to allow a deeper error handling on consumer side.
+In this case, an normal formatted detail about the field goes along with this information to give more context and to still be processed in a generic way if wished.
+
+Example:
+
+`On user backup update`:
+```json
+    "details": {
+        "version": "conflict",
+        "expected_version": "1"
+    }
+```
+
+`On any authenticated routes`:
+```json
+    "details": {
+        "acr" conflict",
+        "required_acr": "2"
+    }
+```
+
+
 ## API Format
 
 For each API that don't need to follow a specific standard (like OAuth for the authentication), we aim to implement resource-oriented apis.
