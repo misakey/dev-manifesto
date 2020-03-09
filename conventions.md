@@ -199,7 +199,7 @@ Example:
 
 `On user backup update`:
 ```json
-    "details": {
+    {
         "version": "conflict",
         "expected_version": "1"
     }
@@ -207,8 +207,8 @@ Example:
 
 `On any authenticated routes`:
 ```json
-    "details": {
-        "acr" conflict",
+    {
+        "acr": "conflict",
         "required_acr": "2"
     }
 ```
