@@ -5,6 +5,13 @@ New to Redux?
 
 Please read this [online doc](https://redux.js.org/introduction/core-concepts) and further pages to get introduced to key concepts that won't be described here.
 
+## Table of Contents
+* [Ecosystem](#ecosystem)
+* [Architecture and conventions](#architecture-and-conventions)
+  * [Actions folder](#actions-folder)
+  * [Reducers folder](#reducers-folder)
+* [Good reads](#good-reads)
+
 ## Ecosystem
 
 We use Redux as a global store inside our React application.
@@ -24,7 +31,7 @@ More information about thunks on their [repo](https://github.com/reduxjs/redux-t
 
 All `actions`, `action creators` and `thunks` are named exports inside said module.
 
-#### Actions
+#### Action symbols
 
 Every `action` is represented by a `Symbol` to ensure its unicity while having human readable logs and names.
 `action` names are always prefixed by their data model object's name.
@@ -63,7 +70,7 @@ Most of our thunks only dispatch multiple actions.
 
 It is recommended to create a thunk when dispatching multiple actions, so that you can reuse the new behaviour created seamlessly.
 
-### Reducers
+### Reducers folder
 
 `/reducers` contains modules grouping all `selectors` and `reducers`  related to a data model object.
 There are also some store specific helpers and wrappers in `/helpers`.

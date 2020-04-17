@@ -9,11 +9,15 @@ It is bootstrapped thanks to React + Webpack. We use Redux as a state store.
 ## Table of Contents
 * [File Structure](#file-structure)
 * [Test Strategy](#test-strategy)
-  * [Do I need to export my code ?](#do-i-need-to-export-my-code-)
 * [Modules](#modules)
-* [Other practices](#other-practices)
-* [Improving the guidelines](#improving-the-guidelines)
+  * [Do I need to export my code ?](#do-i-need-to-export-my-code-)
+* [React](frontend/react.md)
+* [Hooks cheatsheet](frontend/hooks_cheatsheet.md)
+* [Styling](frontend/styling.md)
 * [Q&A](frontend/questionsAnswers.md)
+* [Practices](frontend/practices.md)
+* [Improving the guidelines](#improving-the-guidelines)
+
 
 ## File Structure
 ```
@@ -34,6 +38,11 @@ It is bootstrapped thanks to React + Webpack. We use Redux as a state store.
 │   │   ├── screen # screen page often linked to a <Route />
 │   │   ├── smart # smart component with high level logic
 │   │   ├── App.js
+│   ├── constants
+│   ├── helpers
+│   ├── hooks
+│   ├── middlewares
+│   ├── packages # split packages
 │   ├── store
 │   │   ├── actions
 │   │   ├── reducers
@@ -89,19 +98,6 @@ graph LR;
   D-- NO -->F{Don't export it};
   C-- NO -->F;
 ```
-
-## Other practices
-**Our main objective is to keep a good balance between expertise and simplicity.**
-* [React](frontend/react.md)
-  * [Eslint](frontend/react.md#eslint)
-  * [Hooks](frontend/react.md#hooks)
-  * [Import](frontend/react.md#import)
-  * [Redux](frontend/react.md#redux)
-* [Styling](frontend/styling.md)
-  * [Theme](frontend/styling.md#theme)
-  * [Sass](frontend/styling.md#sass)
-  * [Material UI](frontend/styling.md#material-ui)
-  * [CSS in JS](frontend/styling.md#css-in-js)
 
 ## Improving the guidelines
 

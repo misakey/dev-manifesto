@@ -3,9 +3,10 @@ Guidelines and thought about react development.
 
 ## Table of Contents
 * [Eslint](#eslint)
-* [Hooks](#hooks)
-* [Import](#import)
-* [Redux](#redux)
+* [Testing](#testing)
+  * [Unit tests](#unit-tests)
+  * [Integration Tests with (mocked) HTTP Calls](integration-tests-with-mocked-http-calls)
+  * [Integration Tests with real HTTP Calls](integration-tests-with-real-http-calls)
 
 ## Eslint
 We use [eslint](https://eslint.org/) for code linting.
@@ -158,17 +159,6 @@ module.export = {
   ],
 }
 ```
-
-
-## Hooks
-
-
-## Import
-
-
-## Redux
-
-
 
 
 [Jest]: https://jestjs.io
