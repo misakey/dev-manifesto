@@ -45,6 +45,20 @@ If there are any, they could be discussed during code review.
 
 It is important that both developers and reviewers make sure their review is constructive on such occurrences.
 
+### Refactoring code: when, how ?
+
+It is fine to refactor code during dev, but be careful not to add too much workload to your development and to reviewers.
+
+Keep priorities in mind.
+
+When you spot something that would require a refactor, you are able to estimate its importance and priority over your current developments.
+
+- Can you skip it now, without impacting your current development ?
+- Can you refactor quickly and efficiently ? 
+- Is it closely related to your current tasks ? 
+  - you can add a trail of flowers for later
+- Whenever you choose not to implement that refactor, simply create a slider issue for later
+
 
 ### Team communication
 
