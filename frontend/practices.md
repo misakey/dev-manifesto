@@ -33,17 +33,41 @@ However, the whole frontend team must be involved to review and validate the tec
 
 In good cooperation, any member of the team is legitimate to ask for others' help via [Team communication](#team-communication) when facing risk during writing of the technical design material.
 
-### [Frontend Slider](https://gitlab.misakey.dev/misakey/product-needs/issues/387)
+### [Frontend Slider](https://gitlab.misakey.dev/misakey/frontend/-/boards/45)
 
-On slider issues with high complexity `>=★★★☆☆`, members must at least validate via [Team communication](#team-communication) information were already shared or written inside the issue.
+On slider issues with high complexity `>=•••◦◦`, members must at least validate via [Team communication](#team-communication) information were already shared or written inside the issue.
 
 In case of architectural design requirements, it is up to the developer to ask for team, if they feel the need, via [Team communication](#team-communication)
 
-On slider issues with lower complexity `<=★★☆☆☆`, architectural considerations should be minor. 
+On slider issues with lower complexity `<=••◦◦◦`, architectural considerations should be minor. 
 
 If there are any, they could be discussed during code review.
 
 It is important that both developers and reviewers make sure their review is constructive on such occurrences.
+
+### Lifecycle on Gitlab
+
+#### Milestone slider
+
+Means the issue is part of [Frontend slider](slider.md)
+
+#### Labels
+
+- `Status: Draft`: this issue is not ready to be worked on
+- `Status: To do`: 
+  - self explanatory
+  - post-QA: this issue must be solved before release
+- `Status: Doing` + `assign me`: I am working on this issue
+- `Status: To review` + `assign X`: X, please review this issue/MR
+
+- `Owner: X`: X is the one knowledgeable for this issue
+- `Team: Frontend`: There is frontend work
+- `Bug`: this is a bug, it means there is a regression in app behaviour
+- `Current QA`: this was found during QA
+- `★★★★★`: Priority
+- `•••••`: Complexity
+
+- `Cat: X`: Category of the issue
 
 ### Refactoring code: when, how ?
 
