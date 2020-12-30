@@ -36,11 +36,8 @@ If you want to modify the ruleset we use, you can open a pull request on this pr
 
 ## Python
 
-TODO
-Misc ideas:
-* pylint and [pep rules](https://www.python.org/dev/peps/pep-0008/)
-* enforce black ? Or not ? @SlevinWasAlreadyTaken: yes
-* @SlevinWasAlreadyTaken: enforce flake8 with a prepush hook ?
+* check pylint and [pep rules](https://www.python.org/dev/peps/pep-0008/)
+* black can be used for formatting
 
 ## Golang
 
